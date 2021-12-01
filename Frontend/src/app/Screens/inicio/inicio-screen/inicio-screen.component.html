@@ -1,0 +1,100 @@
+<div class="container">
+  <div class="row">
+      <div class="col">
+          <div class="cursos-recientes">
+              <h1>Continúa tus cursos</h1>
+              <div class="container d-flex justify-content-center" id="container-cartas">
+                  <div *ngFor="let carta of cartas">
+                      <div class="card mb-3">
+                          <iframe 
+                            src="https://www.youtube.com/embed/rEsSxd0L4GI" title="videoreciente" allowfullscreen>
+                          </iframe>
+                          <div class="card-body">
+                              <div class="card-title">
+                                  <h3>{{carta.titulo}}</h3>
+                              </div>
+                              <div class="card-text">
+                                  <h4>{{carta.texto}}</h4>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          
+              <div class="container m-3">
+                  <button type="button" class="btn btn btn-primary">
+                      <a [routerLink]="['/cursos']">Ver más cursos</a>
+                  </button>
+              </div>
+          </div>
+          <hr>
+          <h2>Ofertas laborales destacadas</h2>
+          <div class="container">
+              <div *ngFor="let oferta of ofertas">
+                <hr>
+                  <div class="container row border">
+                      <div class="col left-column">
+                          <h3>{{oferta.titulo}}</h3>
+                          <p>{{oferta.empresa}}</p>
+                          <p>{{oferta.ubicacion}}</p>
+                          <p>Hace {{oferta.tiempo}} minutos</p>
+                      </div>
+                      <div class="col-lg-3">
+                          <img src="assets/LogoCompania.png" alt="ejemplo">
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="col-5">
+          <div class="container">
+              <div class="row mt-3 justify-content-center">
+                  <div class="col-10 mt-5"> 
+                    <div class="card mb-3">
+                      <div class="card-content">
+                        <div class="card-body">
+                          <div class="media d-flex">
+                            <div class="align-self-center">
+                              <span class="material-icons">
+                                edit_calendar
+                              </span>
+                            </div>
+                            <div class="media-body text-left">
+                              <h3>Has estudiado 2 horas esta semana.</h3>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+              <div class="row justify-content-center">
+                  <div class="col-10 mt-4"> 
+                    <div class="card mb-3">
+                      <div class="card-content">
+                        <div class="card-body">
+                          <div class="media d-flex">
+                            <div class="align-self-center">
+                              <span class="material-icons">
+                                done
+                              </span>
+                            </div>
+                            <div class="media-body text-left">
+                              <h3>Has estudiado 2 horas esta semana.</h3>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+              <div class="container mt-5 text-center">
+                  <button type="button" class="btn btn-outline-secondary" [routerLink]="['/certificados']">Ver mis certificados</button>
+              </div>
+              <div class="container mt-5 text-center">
+                  <button type="button" class="btn btn-outline-secondary" [routerLink]="['/bolsa']">Ofertas laborales</button>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>

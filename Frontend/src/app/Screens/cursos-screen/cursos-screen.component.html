@@ -1,0 +1,64 @@
+<div class="container">
+    <div class="row">
+        <div class="col-lg-4">
+            <h1>Filtrar por:</h1>
+            <form>
+                <div class="input-group mb-5">
+                    <input type="text" class="form-control" placeholder="Buscar Cursos Disponibles">
+                    <div class="input-group-prepend">
+                        <button class="btn material-icons border-right border-top border-bottom">search</button>
+                    </div>
+                </div>
+                <div class="col d-flex flex-column">
+                    <div id="Tema">
+                        <label class="form-label">Temática</label>
+                        <div class="form-check col">
+                            <input class="form-check-input" type="checkbox">
+                            <label class="form-check-label">Programación</label>
+                        </div>
+                        <div class="form-check col">
+                            <input class="form-check-input" type="checkbox">
+                            <label class="form-check-label">Diseño</label>
+                        </div>
+                        <div class="form-check col">
+                            <input class="form-check-input" type="checkbox">
+                            <label class="form-check-label">Humanidades</label>
+                        </div>
+                    </div>
+                    <div id="Duracion">
+                        <label class="form-label mt-5">Duración</label>
+                        <div class="form-check col-12">
+                            <input class="form-check-input" type="checkbox">
+                            <label class="form-check-label">2 Modulos</label>
+                        </div>
+                        <div class="form-check col-12">
+                            <input class="form-check-input" type="checkbox">
+                            <label class="form-check-label">3 Modulos</label>
+                        </div>
+                        <div class="form-check col-12">
+                            <input class="form-check-input" type="checkbox">
+                            <label class="form-check-label">4 Modulos</label>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="col-8">
+            <h1>Cursos Disponibles</h1>
+
+            <div class="container" id="container-cursos">
+                <div *ngFor="let curso of ListaCursos">
+                    <div class="card bg-secundario carta-conf" [routerLink]="['/cursos', curso.idcurso]">
+                        <iframe src="https://www.youtube.com/embed/rEsSxd0L4GI" title="videoreciente" allowfullscreen>
+                        </iframe>
+                        <div class="card-body" [routerLink]="['/inicio']">
+                            <div class="card-title">{{curso.titulo}}</div>
+                            <div class="card-text">{{curso.total}} Modulos</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

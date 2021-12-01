@@ -1,0 +1,34 @@
+<div class="container">
+    <h1>Contenido de este Curso</h1>
+    <div class="container" *ngFor="let contenido of ListaModulos">
+        <div class="row">
+            <div class="col-4">
+                <div class="card-body">
+                    <iframe src="https://www.youtube.com/embed/rEsSxd0L4GI" title="contenidocurso" allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+            <div class="col-7">
+                <div class="card-title">
+                    <h2>{{contenido.texto}}:{{contenido.titulo}}</h2>
+
+                </div>
+                <div class="card-text">
+                    {{contenido.descripcion}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container my-2" id="container-botones">
+
+        <button type="button" class="btn btn btn-secondary">
+            <a [routerLink]="['/cursos']">Buscar otro curso</a>
+        </button>
+
+
+        <button type="button" class="btn btn btn-primary" [routerLink]="['/cursoIndividual', id]">
+            <a>Comenzar este curso</a>
+        </button>
+
+    </div>
+</div>

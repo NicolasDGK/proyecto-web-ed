@@ -1,0 +1,48 @@
+<div class="container">
+    <div class="row">
+        <div class="col-8">
+            <div class="container" id="detalles-empleo">
+                <h3>{{Empleo.titulo}}</h3>
+                <p>Descripcion del empleo:</p>
+                <p id="descripcion">{{Empleo.descripcion}}</p>
+                <div class="row" style="margin-top: 60px;">
+                    <div class="col-9">
+                        <p>{{Empleo.empresa}} | {{Empleo.ciudad}}</p>
+                        <footer class="blockquote-footer">Hace {{Empleo.fecha}}</footer>
+                    </div>
+                    <div class="col-2">
+                        <button class="btn btn-primary">Postularme</button>
+                    </div>
+                </div>
+            </div>
+            <h3>Ofertas Relacionadas</h3>
+            <div class="container" *ngFor="let empleo of ListaEmpleos" id="ofertas-relacionadas">
+                <div class="row">
+                    <div class="col-9">
+                        <h4>{{empleo.titulo}}</h4>
+                        <p>{{empleo.empresa}} | {{empleo.ciudad}}</p>
+                        <footer class="blockquote-footer">Hace {{empleo.fecha}}</footer>
+                    </div>
+                    <div class="col-3">
+                        <img id="imagenempleo" src="{{empleo.imagen}}">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="container" id="detalles-empresa">
+                <img src="assets/LogoCompania.png">
+                <div *ngIf="Empleo.verificacion; else NoVerificada">
+                    Empresa Verificada
+                </div>
+                <ng-template #NoVerificada> Empresa no Verificada</ng-template>
+                <p>{{Empleo.empresa}} | {{Empleo.ciudad}}</p>
+                <p>{{Empleo.telefono}}</p>
+                <p>{{Empleo.correo}}</p>
+                <p>Descripción de la empresa:</p>
+
+            </div>
+        </div>
+    </div>
+</div>

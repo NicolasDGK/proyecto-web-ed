@@ -1,0 +1,14 @@
+<div class="container">
+    <h1>Notificaciones</h1>
+    <div class="container" *ngFor="let notificacion of notificaciones" id="notificacion_individual">
+        <div class="row">
+            <div class="col-3">
+                <img class="m-5 rounded align-self-center" style="width:90px; height: 90px;" src="{{notificacion.imagen}}">
+            </div>
+            <div class="col-9">
+                <h5>{{notificacion.nombre}}</h5>
+                <p >{{notificacion.descripcion}}</p>
+            </div>
+        </div>
+    </div>
+</div>

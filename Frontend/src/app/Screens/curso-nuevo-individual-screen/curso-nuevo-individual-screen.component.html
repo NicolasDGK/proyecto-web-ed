@@ -1,0 +1,43 @@
+<div class="container">
+    <div class="row">
+        <div class="col-8">
+            <h1>{{CursoActual.titulo}}</h1>
+            <input type="range" class="form-range" min="1" max="{{ListaModulos.length}}" value="1" id="rangoModulo">
+            <app-modulo-video [Modulo]="ListaModulos[0]"></app-modulo-video>
+        </div>
+        <div class="col-lg-4">
+            <div id="caja_escribir_comentario">
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Escribe un comentario" aria-label="Search">
+                </form>
+            </div>
+            <div *ngFor="let comentario of comentarios" id="otros_comentarios">
+                <p>{{comentario.autor}}</p>
+                <p style="font-size: small;">{{comentario.contenido}}</p>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-6">
+            <div id="CursoRelacionado">
+                <h2>Cursos relacionados</h2>
+                <div class="mt-3">
+                    <div  *ngFor="let curso of CursosRelacionados">
+                        <div class="col">
+                            <div class="card-body">
+                                <iframe src="https://www.youtube.com/embed/rEsSxd0L4GI" title="videoreciente" allowfullscreen></iframe>
+                                <div class="card-body" [routerLink]="['/cursos']">
+                                    <div class="card-title">
+                                        <h2>{{curso.titulo}}</h2>
+                                        <h3>Modulos: {{curso.total}}</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
