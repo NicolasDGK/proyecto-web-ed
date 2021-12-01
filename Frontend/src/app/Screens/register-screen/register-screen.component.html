@@ -4,7 +4,7 @@
         <img src="/assets/register.jpg">
       </div>
       <div class="col-lg-4">
-        <form [formGroup]="formulario" (ngSubmit)="validacion()" novalidate>
+        <form [formGroup]="formulario" (submit)="onSubmit()" novalidate>
           <div class="row">
             <h1>Registrarse</h1>
             <div class="col-6">
@@ -36,14 +36,14 @@
   
               <li>
                 <label class="form-label">Contraseña*</label>
-                <input type="password" class="form-control" formControlName="contraseña" placeholder="Contraseña"
+                <input type="password" class="form-control" formControlName="password" placeholder="password"
                 [ngClass]="{
-                  'is-invalid' : formulario.controls['contraseña'].invalid && (formulario.controls['contraseña'].dirty || formulario.controls['contraseña'].touched),
-                  'is-valid' : formulario.controls['contraseña'].valid && (formulario.controls['contraseña'].dirty || formulario.controls['contraseña'].touched)
+                  'is-invalid' : formulario.controls['password'].invalid && (formulario.controls['password'].dirty || formulario.controls['password'].touched),
+                  'is-valid' : formulario.controls['password'].valid && (formulario.controls['password'].dirty || formulario.controls['password'].touched)
                 }">
-                <div class="alert alert-danger mt-3" *ngIf="formulario.controls['contraseña'].invalid && (formulario.controls['contraseña'].dirty || formulario.controls['contraseña'].touched)">
-                  <div *ngIf="formulario.controls['contraseña'].hasError('required')">Este campo es obligatorio</div>
-                  <div *ngIf="formulario.controls['contraseña'].hasError('minlength')">La contraseña debe contener al menos 8 caracteres</div>
+                <div class="alert alert-danger mt-3" *ngIf="formulario.controls['password'].invalid && (formulario.controls['password'].dirty || formulario.controls['password'].touched)">
+                  <div *ngIf="formulario.controls['password'].hasError('required')">Este campo es obligatorio</div>
+                  <div *ngIf="formulario.controls['password'].hasError('minlength')">La password debe contener al menos 8 caracteres</div>
                 </div>
               </li>
   

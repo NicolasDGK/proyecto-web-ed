@@ -13,6 +13,10 @@ const CursoId = require('./modulosCurso/getCursoId');
 /* Modulos */
 const ModulosIdLista = require('./modulosModulo/getModuloIdCurso');
 
+/* Usuarios */
+const UsuariosLista = require('./modulosUsuario/getUsuarios');
+const InsertarUsuario = require('./modulosUsuario/postUsuario');
+
 const configuracion = {
     hostname: "127.0.0.1",
     port: 3000,
@@ -32,6 +36,10 @@ app.get('/Cursos/:id', CursoId.GetCursoId);
 
 /* Query para modulos */
 app.get('/Modulos/:id', ModulosIdLista.GetModuloIdCurso);
+
+/* Query para usuarios */
+app.get('/Usuarios', UsuariosLista.GetUsuarios);
+app.post('/AgregarUsuario', bodyParser.json(), InsertarUsuario.PostUsuario);
 
 app.listen(configuracion, () =>{
     console.log(`Conectando al servidor http://${configuracion.hostname}:${configuracion.port}`);
